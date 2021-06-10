@@ -1,0 +1,12 @@
+flex:
+  version: 0.5.1
+  workflows:
+    setup-dependencies:
+      command: pip3 install battenberg
+    build:
+      command: ./gradlew build
+    update-template:
+      depends-on: setup-dependencies
+      command: battenberg upgrade --no-input
+service:
+  name: 'java-kotlin-lib-test-zcFFb'
